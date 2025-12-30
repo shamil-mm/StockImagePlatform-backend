@@ -5,6 +5,7 @@ import AuthRoutes from './Routes/authRoutes'
 
 const app = express();
 const allowedOrigins = process.env.FRONTEND_URLS?.split(",") || [];
+console.log(allowedOrigins)
 
 app.use(
   cors({
