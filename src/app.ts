@@ -6,7 +6,7 @@ import AuthRoutes from './Routes/authRoutes'
 const app = express();
 
 app.use(cors({
-  origin:process.env.VITE_FRONTEND_URI,
+  origin:"*",
   credentials:true,
 }));
 app.use(express.json());
