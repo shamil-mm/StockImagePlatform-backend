@@ -214,12 +214,13 @@ export class AuthController {
         startIndex,
         startIndex + limit
       );
-
+      const hasMore = startIndex + paginatedImages.length < collection.images.length;
       return res.status(200).json({
         images: paginatedImages,
         total: collection.images.length,
         page,
         limit,
+        hasMore,
       });
     } catch (error) {
       res.status(500).json({ message: "Server error", error: error });
@@ -457,4 +458,12 @@ logout=async(_req:Request,res:Response)=>{
   }
 }
 
+divid=async(req:Request,res:Response)=>{
+  console.log("divid controller is working")
+  console.log("path params",req.path)
+  console.log("query params",req.query)
 }
+
+}
+
+

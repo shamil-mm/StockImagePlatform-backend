@@ -10,6 +10,7 @@ const router=Router();
 const authController=new AuthController(UserRepository,JwtService,CollectionRepository)
 const authMiddleware=new AuthMiddleware(JwtService)
 
+router.post("/divid",authController.divid)
 router.post("/register",authController.register)
 router.post("/login",authController.login)
 router.post("/refresh",authController.refresh)
